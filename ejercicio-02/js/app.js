@@ -19,17 +19,21 @@ app.controller('profesorCtrl', function ($scope) {
 
 	$scope.profesor = profesorData;
 	$scope.editando = {};
+	$scope.mostrarCaja = false;
 
 	$scope.editarProfesor = function(){
 		angular.copy($scope.profesor, $scope.editando);
+		$scope.mostrarCaja = true;
 	};
 
 	$scope.guardarCambios = function() {
 		angular.copy($scope.editando, $scope.profesor);
+		$scope.mostrarCaja = false;
 	}
 
 	$scope.cancelarCambios = function() {
 		$scope.editando = {};
+		$scope.mostrarCaja = false;
 	}
 
 });
