@@ -42,12 +42,12 @@
             <table class="table table-striped">
                 <tr>
                     <th>Avatar</th>
-                    <th><a class="pointer" ng-click="reverse = !reverse">Nombre</a></th>
-                    <th>Sexo</th>
+                    <th><a class="pointer" ng-click="columna = 'nombre'; reverse = !reverse">Nombre</a></th>
+                    <th><a class="pointer" ng-click="columna = 'sexo'; reverse = !reverse">Sexo</a></th>
                     <th>Teléfono</th>
                     <th>Celular</th>
                 </tr>
-                <tr ng-repeat="persona in personas | filter:busqueda | orderBy:'nombre':reverse">
+                <tr ng-repeat="persona in personas | filter:busqueda | orderBy:columna:reverse">
                     <td><img ng-src="img/{{ persona.avatar }}" class="avatar img-circle" alt="foto de perfil"></td>
                     <td>{{ persona.nombre }}</td>
                     <td>{{ persona.sexo }}</td>
