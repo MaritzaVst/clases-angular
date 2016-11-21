@@ -16,6 +16,9 @@
                 width: 75px;
                 height: 75px;
             }
+            .pointer {
+                cursor: pointer;
+            }
 
         </style>
 
@@ -39,12 +42,12 @@
             <table class="table table-striped">
                 <tr>
                     <th>Avatar</th>
-                    <th>Nombre</th>
+                    <th><a class="pointer" ng-click="reverse = !reverse">Nombre</a></th>
                     <th>Sexo</th>
                     <th>Teléfono</th>
                     <th>Celular</th>
                 </tr>
-                <tr ng-repeat="persona in personas | filter:busqueda">
+                <tr ng-repeat="persona in personas | filter:busqueda | orderBy:'nombre':reverse">
                     <td><img ng-src="img/{{ persona.avatar }}" class="avatar img-circle" alt="foto de perfil"></td>
                     <td>{{ persona.nombre }}</td>
                     <td>{{ persona.sexo }}</td>
