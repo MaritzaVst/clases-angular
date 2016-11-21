@@ -16,12 +16,47 @@
             <h1>ng-repeat</h1>
             <h4>Manejando repeticiones</h4>
             <hr>
+            <!--Ejemplo básico-->
+            <h4>Listado de compras</h4>
             <ul>
                 <li ng-repeat="nombre in listadoDeCompras">
                     {{ nombre }}
                 </li>
             </ul>
-            {{ listadoDeCompras | json }}
+            <!--Tabla con ng-repeat-->
+            <h4>Listado de Profesores</h4>
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Clase</th>
+                </tr>
+                <tr>
+                    <td>Maritza</td>
+                    <td>23</td>
+                    <td>Laboratoria</td>
+                </tr>
+            </table>
+            {{ listadoProfesores }}
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Clase</th>
+                </tr>
+                <tr ng-repeat="profesor in listadoProfesores.profesores">
+                    <td>{{ profesor.nombre }}</td>
+                    <td>{{ profesor.edad }}</td>
+                    <td>{{ profesor.clase }}</td>
+                </tr>
+            </table>
+            <!--Listado dinámico-->
+            <h4>Tabla de multiplicar</h4>
+            <ul>
+                <li ng-repeat="numero in [1,2,3,4,5,6,7,8,9,10]">
+                    {{ numero }} x 2 = {{ numero * 2 }}
+                </li>
+            </ul>
         </div><!-- fin del listadoCtrl -->
     </body> 
 </html>
